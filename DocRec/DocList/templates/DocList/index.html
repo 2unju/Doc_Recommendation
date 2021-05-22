@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+    {% if docs_list %}
+        <ul>
+            {% for title in docs_list %}
+            <li><a href="{% url 'DocList:docs' docs.id %}">{{ title.title_text }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No Docs are available.</p>
+    {% endif %}
+</body>
+</html>

@@ -1,20 +1,7 @@
 import os
 import argparse
-from datetime import datetime, timedelta
 
-from . import DocList
-
-
-def GetData(args):
-    num = 0
-    if args.site == 'daum' and args.field == 'rank':
-        url = 'https://news.daum.net/ranking/popular?regDate='
-        selector = '#mArticle > div.rank_news > ul.list_news2 > li > a'
-        _selector = '#harmonyContainer > section > p'
-        while num < args.n:
-            time = datetime.today()-timedelta(num)
-            DocList.GetDocs(url+(time.strftime("%Y%m%d")),
-                            selector, _selector)
+from database import GetData
 
 def main():
     parser = argparse.ArgumentParser(description='Documents Recommendation')

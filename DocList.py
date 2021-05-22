@@ -1,7 +1,10 @@
 from selenium import webdriver
 from bs4 import BeautifulSoup
 
-def GetDocs(url):
+from . import database
+from . import content
+
+def GetDocs(url, selector, _selector):
     options = webdriver.ChromeOptions()
 
     options.add_argument('--headless')
@@ -14,11 +17,14 @@ def GetDocs(url):
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
 
-    #naverNews
-    Docs = soup.select('#_newsList > ul > li > div > a')
+    #naverNews:'#_newsList > ul > li > div > a'
+    Docs = soup.select(selector)
 
     Doclist = {}
+    contents = {}
     for title in Docs:
-       Doclist[title.text] = title.get('href')
+        _url = title.get('href')
+        Doclist[title.text] = title.get(_url)
+        contents[title.text] = content.GetContent(_url, _selector)
 
-    return Doclist
+    return Doclist, contents

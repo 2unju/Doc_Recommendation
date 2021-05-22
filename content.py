@@ -1,7 +1,7 @@
 from selenium import webdriver
 from bs4 import BeautifulSoup
 
-def GetContent(url):
+def GetContent(url, selector):
     options = webdriver.ChromeOptions()
 
     options.add_argument('--headless')
@@ -14,8 +14,8 @@ def GetContent(url):
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
 
-    #naverNews
-    content = soup.select_one('#newsEndContents')
+    #naverNews : '#newsEndContents'
+    content = soup.select_one(selector)
     res = ""
     for para in content.contents:
         stripped = str(para).strip()
