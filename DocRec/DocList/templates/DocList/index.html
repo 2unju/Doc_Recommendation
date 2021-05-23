@@ -5,14 +5,23 @@
     <title>index</title>
 </head>
 <body>
+  <form action="" method="get">
+  <input type="text" name="q" value="{{ q }}">
+  <input type="submit" value="search">
+  </form>
+
     {% if docs_list %}
-        <ul>
-            {% for title in docs_list %}
-            <li><a href="{% url 'DocList:docs' docs.id %}">{{ title.title_text }}</a></li>
+        <ol>
+            {% for doc in docs_list %}
+            <li><a href="{% url 'DocList:docs' doc.0 %}">{{ doc.1 }}</a></li>
             {% endfor %}
-        </ul>
+        </ol>
     {% else %}
         <p>No Docs are available.</p>
     {% endif %}
+    {% if previous > 0 %}
+        <a href="{% url 'DocList:index' previous %}">Back</a>
+    {% endif %}
+    <a href="{% url 'DocList:index' next %}">Next</a>
 </body>
 </html>

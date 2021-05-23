@@ -2,18 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>docs</title>
+    <title> </title>
+    <style media="screen">
+      #warp{
+        max-width: 100%;
+      }
+      #related{
+        float:left;
+      }
+      #word{
+        float:right;
+      }
+      #back{
+        clear:both;
+      }
+    </style>
 </head>
 <body>
-<h1>{{ title._text }}</h1>
+<h1>{{ doc.0 }}</h1>
 
-<ul>
-   <li>{{ content._text }}
-       <br><br>
-       {{ DocUrl._text }}
-   </li>
-</ul>
-
-<a href="{% url 'DocList:index' docs.id %}">Back</a>
+<div>
+  <div id="warp">
+    {{ doc.2 }}
+  </div>
+  <div id="related">
+    <h2>유사 문서</h2>
+    <ol>
+        {% for doc in related %}
+        <li>{{ doc }}</li>
+        {% endfor %}
+    </ol>
+  </div>
+  <div id="word">
+    <h2>Top ranking word</h2>
+    <ol>
+        {% for word in frequency %}
+        <li>{{ word }}</li>
+        {% endfor %}
+    </ol>
+    </div>
+    <div id="back">
+      <a href="{% url 'DocList:index' page %}">Back</a>
+    </div>
+</div>
 </body>
 </html>

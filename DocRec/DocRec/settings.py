@@ -77,11 +77,11 @@ WSGI_APPLICATION = 'DocRec.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'DocDB',
-        'USER': 'root',
-        'PASSWORD': '2019102177',
+        'NAME': 'docdb',
+        'USER': 'postgres',
+        'PASSWORD': '********',
         'HOST': 'localhost',
-        'PORT': '',
+        'PORT': '5432',
     }
 }
 
