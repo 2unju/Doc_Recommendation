@@ -58,16 +58,8 @@
 
 
 
-<img src="" width="700">
 
-+ 검색 기능(q = 코인)
-------
-
-
-
-<img src="" width="700">
-
-+ 메인 페이지에서 Docs로 진입
++ Search와 Documents Recommendation의 경우, DB로 저장하는 과정에서의 PRIMARY KEY 배정 오류로 인해 작동은 하나 화면에 정상적으로 출력되지 않음(수정중)
 ------
 
 
