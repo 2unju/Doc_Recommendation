@@ -60,7 +60,7 @@
 
 <img src="https://user-images.githubusercontent.com/77797199/119304665-8bbbda00-bca2-11eb-9eb5-0dcfb79c62bd.PNG" width="700">
                                                                                                                         
-+ Search ERROR: 정상적인 출력 중간에 튀는 값 발생(유사 문서 추천도 동일) 크롤링으로 가져온 값을 PostgreSQL에 저장하는 과정에서 PRIMARY KEY의 값이 (SERIAL 설정에도 불구하고) 중간중간 튀어있는 것이 원인으로 추측됨. SERIAL KEY 오류의 원인은 찾지 못함. CSV 입출력 형식으로 변경할 예정.
++ Search ERROR: 정상적인 출력 중간에 튀는 값 발생(유사 문서 추천도 동일/같은 문서가 여러번 출력되는 이유는 크롤링한 사이트인 daum news/ranking 카테고리가 일자별로 뉴스를 분류할 때 중복된 뉴스도 넣어놓기 때문) 크롤링으로 가져온 값을 PostgreSQL에 저장하는 과정에서 PRIMARY KEY의 값이 (SERIAL 설정에도 불구하고) 중간중간 튀어있는 것이 원인으로 추측됨. SERIAL KEY 오류의 원인은 찾지 못함. CSV 입출력 형식으로 변경할 예정.
                                                                                                                         
 ------
 
