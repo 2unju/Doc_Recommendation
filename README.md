@@ -1,4 +1,4 @@
-# Document Recommendaion system
+# Document Recommendation system
 <br>
 
 ## Prerequisites
@@ -23,6 +23,7 @@
 어떤 차원 공간내에 분포된 데이터에 대하여 인근에 위치한 데이터들끼리의 군집화(Clustering)를 시행할 때 이용되는 방법 중 하나.  
 
 ## konlpy
+한국어는 영어와 달리 '어근+어미' 형태, '명사+조사' 형태 등 단순 띄어쓰기로는 품사를 구분할 수 없는 경우가 많기에 영어와는 다른 독자적 자연어처리 패키지를 필요로 한다. 
 <br><br>
 
 ## References
