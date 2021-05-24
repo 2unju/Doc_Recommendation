@@ -39,4 +39,39 @@
 + Django 서버 실행
 + Document Recommendation, Search, Top Ranking Word 기능 제공
 + Document Recommendation 기능 최초 실행시, 크롤링한 모든 데이터의 단어(okt.nouns)를 담은 json 파일 생성
-+ _크롤링할 웹사이트/문서 주제 선택/tokenizer 선택 기능 제공_(구현예정)
++ _크롤링할 웹사이트/문서 주제 선택/tokenizer 선택 기능 제공_(미구현)
+
+## Demo
+<img src="https://user-images.githubusercontent.com/77797199/119304233-edc80f80-bca1-11eb-9445-bb9d3086cb60.PNG" width="700">
+
++ 크롤링 데이터가 저장된 DB ; PostgreSQL, paAdmin4
+
+
+------
+
+
+
+<img src="https://user-images.githubusercontent.com/77797199/119304222-e86ac500-bca1-11eb-8d02-89776f22bf88.PNG" width="700">
+
++ 메인 페이지 ; index, back/next, search<br>
+------
+
+
+
+<img src="" width="700">
+
++ 검색 기능(q = 코인)
+------
+
+
+
+<img src="" width="700">
+
++ 메인 페이지에서 Docs로 진입
+------
+
+
+
+<img src="https://user-images.githubusercontent.com/77797199/119304241-f02a6980-bca1-11eb-9a9c-4e2e111845c8.PNG" width="350"> <img src="https://user-images.githubusercontent.com/77797199/119304247-f1f42d00-bca1-11eb-87ea-cf8a836dba17.PNG" width="350">
+
++ 모든 단어에 대한 VOCA 출력 예시
