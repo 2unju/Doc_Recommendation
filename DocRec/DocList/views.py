@@ -15,7 +15,7 @@ def index(request, _page):
         docs_df = database.GetDF()
         docs_list = recommend.SearchDoc(docs_df, q)
     else:
-        sign_info = "host='localhost' dbname ='docdb' user='postgres' password='********'"
+        sign_info = "host='localhost' dbname ='docdb' user='postgres' password='tlqejr1010'"
         sign = psycopg2.connect(sign_info)
         cursor = sign.cursor()
         fnum = _page * 20
@@ -35,7 +35,7 @@ def index(request, _page):
     })
 
 def docs(request, _id):
-    sign_info = "host='localhost' dbname ='docdb' user='postgres' password='********'"
+    sign_info = "host='localhost' dbname ='docdb' user='postgres' password='tlqejr1010'"
     sign = psycopg2.connect(sign_info)
     cursor = sign.cursor()
 

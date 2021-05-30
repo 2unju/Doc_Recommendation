@@ -4,6 +4,7 @@ import json
 from konlpy.tag import Okt
 
 def MakeVoca(nouns_df):
+    print("Make Vocabulary")
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
     okt = Okt()

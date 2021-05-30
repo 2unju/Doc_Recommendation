@@ -6,3 +6,4 @@
 *.json
 /venv/
 test.py
+/error/

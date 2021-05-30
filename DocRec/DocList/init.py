@@ -1,6 +1,9 @@
 import argparse
 
-from .database import GetData, SaveData
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+#import database
+from . import database
 
 def main():
     parser = argparse.ArgumentParser(description='Documents Recommendation')
@@ -33,7 +36,7 @@ def main():
     )
     parser.add_argument(
         '--n',
-        default=100,
+        default=1000,
         type=int,
         help='num of docs'
     )
@@ -50,15 +53,13 @@ def main():
     )
     args=parser.parse_args()
 
-    docs = GetData(args)
-    SaveData(docs)
+    docs, num = database.GetData(args)
+    database.SaveData(docs, num)
     # print(docs_df)
     #select_doc = docs_df.iloc[10]['title']
     # related = Top10_Docs(docs_df, 5)
     # print("title: ", docs_df.loc[5][1])
     # print("related docs: ", related)
-
-
 
 if __name__ == '__main__':
     main()
