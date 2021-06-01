@@ -1,11 +1,14 @@
 import pandas as pd
 import psycopg2
 import csv
+import os
 #import gensim
 
 from datetime import datetime, timedelta
 from selenium import webdriver
 from bs4 import BeautifulSoup
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def GetData(args):
     docs_df = pd.DataFrame(columns=['idx', 'title', 'url', 'content'])
@@ -71,10 +74,11 @@ def SaveData(docs_df, num):
     #                              str(docs_df.iloc[idx]['content'])))
     #     sign.commit()
     #
-    # cursor.close()
+    # cursor.close()c
     # sign.close()
 
-    with open('data.csv', 'w', encoding='utf-8') as db:
+    with open(os.path.join(BASE_DIR + '/', 'data.csv'),
+              'w', encoding='utf-8', newline='') as db:
         writer = csv.writer(db)
         for idx in range(num):
             writer.writerow([idx, docs_df.iloc[idx]['title'],
@@ -92,10 +96,11 @@ def GetDF():
     # cursor.close()
     # sign.close()
     docs = []
-    with open('./data.csv') as db:
+    with open(os.path.join(BASE_DIR + '/', 'data.csv'),
+              'r', encoding='utf-8') as db:
         reader = csv.reader(db)
         for data in reader:
-            docs += data
+            docs.append(data)
 
     docs_df = pd.DataFrame(columns=['idx', 'title', 'url', 'content'])
 
